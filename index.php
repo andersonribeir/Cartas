@@ -29,7 +29,7 @@ session_start();
 		<div class="col-md-4 col-sm-4 col-xs-12">
 			<!--inicio-->
 				<form class="form-conatiner" method="POST" action="validar.php">
-					<center><h1 class="configcollor">Bem Vindo!!</h1></center>
+					<center><h1 class="configcollor">NOME DO JOGO</h1></center>
 
 
   <div class="form-group"> 	

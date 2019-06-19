@@ -13,6 +13,10 @@ $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error
  $linha2 = mysqli_fetch_array($query3);
  $id = $linha2['idtime'];
 
+ $sql2 = "SELECT hp FROM timescad WHERE idtime = '{$id}'";
+ $query4 = mysqli_query($conexao,$sql2);
+ $linha3 = mysqli_fetch_array($query4);
+ $haironletas = $linha3['hp'];
 
 
 if(empty($id))
@@ -58,10 +62,10 @@ if(empty($id))
         </li>
 
         <li>
-          <a class="not-active" href="aposta.php" disabled>Apostar</a>
+          <a class="not-active" href="#" disabled>Duelar</a>
         </li>
         <li>
-          <a href="minhas_apostas.php">Minha aposta</a>
+          <a href="#">Ranking</a>
         </li>
       </ul>
 
@@ -73,87 +77,12 @@ if(empty($id))
   </div>
 
 </nav>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="imagens/carousel3.png" alt="Chania">
-      <div class="carousel-caption">
-        <h3>Seja bem vindo</h3>
-        <p class="carouselcolor">Palpite, aguarde, pontue!</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="imagens/carousel2.png" alt="Chicago">
-      <div class="carousel-caption">
-        <h3>Seu ranking</h3>
-       <p class="carouselcolor">Você poderá visualizar seu ranking após o final da primeira rodada</p>
-      </div>
-    </div>
-
-    <div class="item ">
-      <img src="imagens/carousel1.png" alt="New York">
-      <div class="carousel-caption">
-        <h3>Palpite!</h3>
-        <p class="carouselcolor">Edite seu palpite quantas vezes quiser, mas antes que a rodada acabe.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div class="container bg6">
-<div class="container">
-  <div class="row"><CENTER>
-    <h4 class="configcollor vocesabia">VOCÊ SABIA?</h4></CENTER><br>
-
-    <div class="container col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
- <center><h5 class="configcollor negrito" > O cartão mais rápido</h5></center>
-       
-      <h4 class="configcollor indexborder">
-       O jogador que teve a honra dúbia de receber o cartão vermelho mais rápido de sempre foi Lee Todd, da equipe britânica Cross Farm Park Celtic. Quando o juiz apitou para marcar o início do jogo, Lee Todd, que estava muito perto dele, se assustou com o barulho e disse um palavrão. Ele foi imediatamente expulso do jogo.</h4>
-    </div>
-   
-    <div class="container col-sm-3 col-md-3 col-lg-3 col-xl-3  cartao">
-      <center><h5 class="configcollor negrito" > Um raio?</h5></center>
-
-      
-      <h4 class="configcollor indexborder">
-      Em 1998, num dos episódios mais tristes do futebol, uma equipe inteira foi fulminada por um raio. O time Bena Tshadi, na República Democrática do Congo, estava jogando contra o Basanga quando o raio atingiu o campo. Os 11 jogadores do Bena Tshadi morreram mas a outra equipe não sofreu ferimentos. Isso levou a rumores de feitiçaria…</h4>
-    </div>
-    
-    <div class="container col-sm-3 col-md-3 col-lg-3 col-xl-3  cartao">
-      <center><h5 class="configcollor negrito" > Três é demais</h5></center>
-      
-      
-      <h4 class="configcollor indexborder">
-       Nos anos 1950, o artista dinamarquês Asger Jorn inventou um jogo de futebol para 3 equipes, com um campo hexagonal. A vitória seria da equipe que sofresse menos gols. O objetivo era tornar o jogo menos agressivo, porque a vitória dependia da defesa e não do ataque. Atualmente, existem alguns jogos oficiais de futebol de 3 lados.</h4>
-    </div>
-    <br>
-  </div>  
-</div>
-</div>
-
 </body>
 </html>
+
 <?php } else {
  ?>
+
  <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -192,10 +121,10 @@ if(empty($id))
         </li>
 
         <li>
-          <a href="aposta.php" disabled>Apostar</a>
+          <a href="#">Duelar</a>
         </li>
         <li>
-          <a href="minhas_apostas.php">Minha aposta</a>
+          <a href="#">Ranking</a>
         </li>
       </ul>
 
@@ -207,85 +136,33 @@ if(empty($id))
   </div>
 
 </nav>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
 
-  
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="imagens/carousel3.png" alt="Chania">
-      <div class="carousel-caption">
-        <h3>Seja bem vindo</h3>
-        <p class="carouselcolor">Palpite, aguarde, pontue!</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="imagens/carousel2.png" alt="Chicago">
-      <div class="carousel-caption">
-        <h3>Seu ranking</h3>
-        <p class="carouselcolor">Você poderá visualizar seu ranking após o final da primeira rodada</p>
-      </div>
-    </div>
-
-    <div class="item ">
-      <img src="imagens/carousel1.png" alt="New York">
-      <div class="carousel-caption">
-        <h3>Palpite</h3>
-        <p class="carouselcolor">Edite seu palpite quantas vezes quiser, mas antes que a rodada acabe.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div class="container bg6">
-<div class="container">
-  <div class="row"><CENTER>
-    <h4 class="configcollor vocesabia">VOCÊ SABIA?</h4></CENTER><br>
-
-    <div class="container col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
- <center><h5 class="configcollor negrito" > O cartão mais rápido</h5></center>
-       
-      <h4 class="configcollor indexborder">
-       O jogador que teve a honra dúbia de receber o cartão vermelho mais rápido de sempre foi Lee Todd, da equipe britânica Cross Farm Park Celtic. Quando o juiz apitou para marcar o início do jogo, Lee Todd, que estava muito perto dele, se assustou com o barulho e disse um palavrão. Ele foi imediatamente expulso do jogo.</h4>
-    </div>
-   
-    <div class="container col-sm-3 col-md-3 col-lg-3 col-xl-3  cartao">
-      <center><h5 class="configcollor negrito" > Um raio?</h5></center>
-
-      
-      <h4 class="configcollor indexborder">
-      Em 1998, num dos episódios mais tristes do futebol, uma equipe inteira foi fulminada por um raio. O time Bena Tshadi, na República Democrática do Congo, estava jogando contra o Basanga quando o raio atingiu o campo. Os 11 jogadores do Bena Tshadi morreram mas a outra equipe não sofreu ferimentos. Isso levou a rumores de feitiçaria…</h4>
-    </div>
-    
-    <div class="container col-sm-3 col-md-3 col-lg-3 col-xl-3  cartao">
-      <center><h5 class="configcollor negrito" > Três é demais</h5></center>
-      
-      
-      <h4 class="configcollor indexborder">
-       Nos anos 1950, o artista dinamarquês Asger Jorn inventou um jogo de futebol para 3 equipes, com um campo hexagonal. A vitória seria da equipe que sofresse menos gols. O objetivo era tornar o jogo menos agressivo, porque a vitória dependia da defesa e não do ataque. Atualmente, existem alguns jogos oficiais de futebol de 3 lados.</h4>
-    </div>
-    <br>
-  </div>  
-</div>
-</div>
 
 </body>
 </html>
-	 	
-<?php }  ?>
+<?php 
+$conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error(mysql_error());
+  $sql = "SELECT nometime,fototime FROM timescad ORDER BY nometime";
+  $query = mysqli_query($conexao,$sql);
+  $dadosrecebidos = mysqli_fetch_array($query);
+  $time = $dadosrecebidos['nometime'];
+  $foto = $dadosrecebidos['fototime'];
+  $c = 1;
+  if(!!$query){
+     foreach($query as $item){
+      $timee = $item['nometime'];
+      $fotoo = $item['fototime'];
+}
+echo "<h5 class = 'configtitle'>BEM VINDO $uniao</div></h5>";
+
+echo "<img class ='configtel' src='backup/$fotoo'>";
+echo "<h5 class ='configname'>O seu time é: $timee";
+echo "<h5 class ='configname1'>O seu saldo atual de Haironletas é: $haironletas </h5>";
+echo "<h5 class = 'configname1'>PREENCHE COM OQ VCS ACHAREM QUE PRECISA!!!!!!!!!!!!!!</h5>";
+
+
+}}
+ ?>
+
+
 	
