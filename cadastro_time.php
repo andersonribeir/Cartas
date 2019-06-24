@@ -43,7 +43,7 @@
           <a class="not-active" href="#" disabled>Duelar</a>
         </li>
         <li>
-          <a href="#">Ranking</a>
+          <a href="aprimoramento.php" class="not-active">Aprimoramento</a>
         </li>
       </ul>
 
@@ -55,20 +55,23 @@
   </div>
 
 </nav>
-	<div class="container-fluid bg3">
+	<div class="container-fluid ">
 	<div class="espaco1">
 
 <form method="POST" action="cad.php" enctype="multipart/form-data">
+  <center>
 <h4 class="cadastrotime">Insira aqui o nome e brasão do seu Clube</h4><br>
 
   
-	
+	</center>
+  <div class="container col-sm-6 col-lg-16 col-xl-16 espaco4">
 	<h5 class='cadastrotime'>Nome do time: <input class='formcontroll' type='text' name = 'nometime' ></h5>
 	<h5 class='cadastrotime'>Foto do time: </h5> <input class='cadastrotime' type='file' name='arquivo'><br><br>
  
 
 
 	<button type="submit" class="btn btn-success">Cadastrar</button><br>
+</div>
 </div>
 
 </form>

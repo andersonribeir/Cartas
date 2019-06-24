@@ -18,13 +18,11 @@ $query3 = mysqli_query($conexao,$sql1);
 
 
  $i = 1;
- while ($i <= 2 ) {
+ while ($i <= 4 ) {
     
 
  $nomejog = $_POST[$i];
- $racajog = $_POST['raca'.$i];
- $habjog = $_POST['habilidade'.$i];
- $condjog = $_POST['cond'.$i];
+
  
 // verifica se foi enviado um arquivo
 if ( isset( $_FILES[ 'arquivo'.$i ][ 'name' ] ) && $_FILES[ 'arquivo'.$i ][ 'error' ] == 0 ) {
@@ -56,7 +54,7 @@ if ( isset( $_FILES[ 'arquivo'.$i ][ 'name' ] ) && $_FILES[ 'arquivo'.$i ][ 'err
 
         $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error(mysql_error());
 
-        $sql = "INSERT INTO jogador(idJogador,NomeJogador,FotoJogador,Habilidade,Raca,CapFis,idtime) VALUES(null,'$nomejog','$novoNome','$habjog','$racajog','$condjog','$id')";
+        $sql = "INSERT INTO jogador(idJogador,NomeJogador,FotoJogador,Habilidade,Raca,CapFis,idtime) VALUES(null,'$nomejog','$novoNome','100','100','100','$id')";
         $query = mysqli_query($conexao,$sql);
 
         

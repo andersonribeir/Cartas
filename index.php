@@ -23,13 +23,13 @@ session_start();
 </head>
 <body>
 
-	<div class="container-fluid bg">
+	<div class="container-fluid bg1">
 	<div class="row">
 		<div class="col-md-4 col-sm-4 col-xs-12"></div>
 		<div class="col-md-4 col-sm-4 col-xs-12">
 			<!--inicio-->
 				<form class="form-conatiner" method="POST" action="validar.php">
-					<center><h1 class="configcollor">NOME DO JOGO</h1></center>
+					<center><h1 class="configcollor">Hairon Cards</h1></center>
 
 
   <div class="form-group"> 	

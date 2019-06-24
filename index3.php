@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<div class="container-fluid bg">
+	<div class="container-fluid bg1">
 	<a class="btv btn-info" href="index.php">Voltar</a>
 	<div class="row">
 		<div class="col-md-4 col-sm-4 col-xs-12"></div>

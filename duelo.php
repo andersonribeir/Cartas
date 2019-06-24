@@ -50,7 +50,7 @@ $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="cadastro_time.php">Criar Clube</a></li>    
+        <li><a class = "not-active" href="cadastro_time.php">Criar Clube</a></li>    
 
         </li>
 
@@ -58,10 +58,11 @@ $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error
           <a class="not-active" href="#" disabled>Duelar</a>
         </li>
         <li>
-          <a href="#">rank</a>
+          <a class = "not-active"href="aprimoramento.php">Aprimoramento</a>
         </li>
       </ul>
       <div class="container-fluid ">
+
       <form class="navbar-form navbar-right" method="POST" action="logout.php" >
         <button class="btn btn-outline-danger my-2 my-sm-0">Sair</button>
       </form>
@@ -70,17 +71,19 @@ $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error
   </div>
 
 </nav>
-	<div class="container-fluid col-sm-6 col-lg-6 col-xl-6 espaco1  ">
+
+	<div class="container-fluid col-sm-6 col-lg-6 col-xl-6 espaco1 ">
+
     <div class='row'>
     <center><h5 class="configcolor">Seus Jogadores</h5></center>
     
 	
 
-<form method="POST" action="cad.php" enctype="multipart/form-data">
+<form method="POST" action="cad.php" enctype="multipart/form-data"
 <?php
  $sql2 = "SELECT * FROM jogador WHERE idtime = '{$id}'";
  $query2 = mysqli_query($conexao,$sql2);
- $linha2 = mysqli_fetch_array($query);
+ $linha2 = mysqli_fetch_array($query2);
 $nomejogador = $linha2['NomeJogador'];
 $fotojogador = $linha2['FotoJogador'];
 $raca = $linha2['Raca'];
@@ -102,24 +105,17 @@ $hab = $linha2['Habilidade'];
       <h5 class='configcolor'>$timee<br><br>Raça = $raca<br>Fisico = $capfis<br>Habil = $hab</h5>
       </div></row>";
       echo "</div>";
-
      
 } 
 
 echo "</div></div>";
 }
-
 ?>
-
-
 
 
 </form>
 </div>
 </div>
-
-
-
 <div class="container-fluid col-sm-6 col-lg-6 col-xl-6 espaco1">
 <div class='row'>
     <center><h5 class="configcolor inimigo">Jogadores Inimigos</h5></center>
@@ -138,7 +134,29 @@ foreach($query3 as $item){
       array_push($arr, $timee);
  }
 $numeroiminigos = count($arr);
-$imigoaleatorio = rand(0,$numeroiminigos-1);
+$imigoaleatorio = mt_rand(0,$numeroiminigos-1);
+
+
+$sql5 = "SELECT hp FROM timescad WHERE idtime = '{$arr[$imigoaleatorio]}'";
+$query5 = mysqli_query($conexao,$sql5);
+$linha5 = mysqli_fetch_array($query5);
+$hp = $linha5['hp'];
+
+if ($hp<50) {
+$imigoaleatorio = mt_rand(0,$numeroiminigos-1);
+$sql5 = "SELECT hp FROM timescad WHERE idtime = '{$arr[$imigoaleatorio]}'";
+$query5 = mysqli_query($conexao,$sql5);
+$linha5 = mysqli_fetch_array($query5);
+$hp = $linha5['hp'];
+ } 
+
+
+
+
+  
+$_SESSION['inimigo'] = $arr[$imigoaleatorio];
+$teste = $_SESSION['inimigo'];
+
 
 $sql4 = "SELECT * FROM jogador WHERE idtime = '{$arr[$imigoaleatorio]}'";
  $query4 = mysqli_query($conexao,$sql4);
@@ -174,16 +192,17 @@ echo "</div></div>";
 ?>
 
 </div></div>
-<form class = "container-fluid" method="POST" action="realizarjogada.php">
+<form class = "container-fluid bg" method="POST" action="realizarjogada.php">
 <div class="container-fluid col-sm-12 col-lg-12 col-xl-12 espaco1 centralizabtn">
   
 <div class="container ">
   <center><h5 class="configmenu">Escolha o atributo para o primeiro embate:</h5>
     <div class=" container-fixed col-sm-12 col-lg-12 col-xl-12 centralizabtn">
-    <button type ="submit" name= "raca" class="btn btn-outline-dark my-2 my-sm-0 tambtn">Raça</button>
-    <button type ="submit" name= "fis" class="btn btn-outline-warning my-2 my-sm-0 tambtn">Fisico</button>
+    <input type="submit" name="opcao" value="Raca" class="btn btn-success my-2 my-sm-0 tambtn">
     
-    <button type ="submit" name= "hab" class="btn btn-outline-info my-2 my-sm-0 tambtn">Habilidade</button></center>
+    <input type="submit" name="opcao" value="Fisico" class="btn btn-warning my-2 my-sm-0 tambtn">
+    
+   <input type="submit" name="opcao" value="Habil" class="btn btn-info my-2 my-sm-0 tambtn">
     </form>
   </div>
 </div>

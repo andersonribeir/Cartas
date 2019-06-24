@@ -42,9 +42,9 @@ if ( isset( $_FILES[ 'arquivo'.$i ][ 'name' ] ) && $_FILES[ 'arquivo'.$i ][ 'err
 
         $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error(mysql_error());
 
-        $sql = "INSERT INTO timescad(idtime,nometime,fototime) VALUES(null,'$time','$novoNome')";
+        $sql = "INSERT INTO timescad(idtime,nometime,fototime,hp) VALUES(null,'$time','$novoNome','1000')";
         $query = mysqli_query($conexao,$sql);
-        $conexao = mysqli_connect('127.0.0.1', 'root', '', 'pwebfinal') or trigger_error(mysql_error());
+        
 
          $sql1 = "SELECT idtime FROM timescad WHERE nometime = '{$time}'";
         $query1 =  mysqli_query($conexao,$sql1);

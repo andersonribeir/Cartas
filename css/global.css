@@ -1,7 +1,7 @@
 *{color: #fff;}
 *{font-family: Helvetica;}
 
-.bg{background: url('../imagens/.png') no-repeat; width: 100%; height: 105vh;}/*MUDAR O BACKGROUND*/
+.bg{background: url('../imagens/bg.png') no-repeat; width: 100%; height: 125vh;}/*MUDAR O BACKGROUND*/
 
 
 .form-conatiner{border: 0px solid; padding: 40px 60px; margin-top: 120px; 
@@ -148,7 +148,25 @@
 .inimigo{
  background: brown;
 }
+.pontos{
+  background: green;
+}
+.nomesapr{
+  background: #F2F2F0;
+  font-style: bold;
+  font-family: "Times New Roman";
+  color: green;
+  width: 160px;
+ 
+  font-size: 17px;
+  border-radius: 5px;
+
+}
 .configtel{
+  border:solid;
+  background: white;
+  border-color: #DAA002;
+  border-radius: 10px;
   width: 150px;
   padding: 5px;
 
@@ -165,12 +183,20 @@
   font-style: bold;
 }
 .configtitle{
-  background: #5DF7AB;
+  background: #757474;
+  border-radius: 50px;
+  
+   
+
+  border-color: #A06008;
   margin-top: 10px;
   font-size: 30px;
   text-align: center;
   font-variant: "Constantia";
   font-color: white;
+}
+.espaco4{
+  margin-left: 10px;
 }
 .configname1{
   
@@ -201,6 +227,15 @@
   text-align: center; 
 
 } 
+.telinha1{
+  border-radius: 5px;
+  background: #A06008;
+  padding: 5px;
+
+  color: #fff;
+  font-weight: bold;
+
+}
 
 .telinha img{
 
@@ -271,10 +306,37 @@ ul{
 	/*top*/
 
 }
+.fontepreto{
+  color: white;
+  font-size: 30px;
+}
+.index4div1{
+  margin-top: 50px;
+  font-size: 50px;
+  font-family: "Times New Roman";
+
+}
+.espaco3{
+  margin-top: -33px;
+  margin-left: 135px;
+  width: 230px;
+}
+.espaco4{
+  margin-left: 170px;
+}
+.transparencia{
+  color: green;
+  opacity: -50%;
+  width: 160px;
+  margin-top: 5px;
+}
 .espaco1{
 	
 	margin-top: 60px;
   margin-left: auto;
+}
+.espaco2{
+  margin-top: 20px;
 }
 .formcontroll{
  margin-left: 105px;
@@ -908,7 +970,7 @@ display: block;
   opacity: 20%;
 
 }
-.bg1{background: url('../imagens/bgg.png') no-repeat; width: 100%; height: 105vh;}
+.bg1{background: url('../imagens/bg1.png') no-repeat; width: 100%; height: 105vh;}
 .bg2{background: url('../imagens/bggg.png') no-repeat; width: 100%; height: 105vh; margin-top: 10px;}
 .bg3{background: url('../imagens/repetido.png') ; width: 100%; height: 200vh;}
 .bg4{background: url('../imagens/bgadmin.png') no-repeat; width: 100%; height: 105vh;}
